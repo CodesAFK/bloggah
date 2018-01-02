@@ -62,6 +62,23 @@ app.get("/posts/new", function(req, res){
 });
 
 // ============================
+//    POST ROUTES            ==
+// ============================
+
+//  CREATE POST
+
+app.post("/posts", function(req, res){
+    Post.create(req.body.post, function(err, newPost){
+        if(err){
+            console.log(err);
+            res.render("new");
+        } else {
+            res.redirect("/posts")
+        }
+    });
+});
+
+// ============================
 //     START SERVER          ==
 // ============================
 
