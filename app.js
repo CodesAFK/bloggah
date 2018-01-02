@@ -55,10 +55,23 @@ app.get("/posts", function(req, res){
 
 });
 
-//  NEW POST
+//  NEW
 
 app.get("/posts/new", function(req, res){
    res.render("new")
+});
+
+//  SHOW
+
+app.get("/posts/:id", function(req, res){
+    Post.findById(req.params.id, function(err, foundPost){
+        if(err){
+            console.log(err);
+            res.redirect("/posts");
+        } else {
+            res.render("show", {post:foundPost});
+        }
+    });
 });
 
 // ============================
