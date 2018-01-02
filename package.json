@@ -1,0 +1,26 @@
+{
+  "name": "bloggah",
+  "version": "1.0.0",
+  "description": "Blog application built with SemanticUI, Node, and Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CodesAFK/bloggah.git"
+  },
+  "keywords": [
+    "Node.js",
+    "CodesAFK",
+    "Express.js",
+    "SemanticUI",
+    "Boston"
+  ],
+  "author": "Dave Mars (CodesAFK)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodesAFK/bloggah/issues"
+  },
+  "homepage": "https://github.com/CodesAFK/bloggah#readme"
+}
