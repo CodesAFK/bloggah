@@ -23,7 +23,6 @@ var postSchema = mongoose.Schema({
 var Post = mongoose.model("posts", postSchema);
 
 
-
 // ============================
 //     START SERVER          ==
 // ============================
