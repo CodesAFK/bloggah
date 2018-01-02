@@ -74,6 +74,19 @@ app.get("/posts/:id", function(req, res){
     });
 });
 
+//  EDIT
+
+app.get("/posts/:id/edit", function(req, res){
+    Post.findById(req.params.id, function(err, foundPost){
+        if(err){
+            res.redirect("/posts");
+        } else {
+            res.render("edit", {post:foundPost});
+        }
+    });
+
+});
+
 // ============================
 //    POST ROUTES            ==
 // ============================
