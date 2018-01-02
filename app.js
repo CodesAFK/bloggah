@@ -22,18 +22,18 @@ var postSchema = mongoose.Schema({
 
 var Post = mongoose.model("posts", postSchema);
 
-Post.create(
-    {
-     title:"What do you know, it works!!",
-     body: "Lots of good stuff here...  Lorem Ipsum is dead!!",
-     image: "https://static.pexels.com/photos/261579/pexels-photo-261579.jpeg"
-    }, function(err, newlyCreated){
-        if(err){
-            console.log(err)
-        } else {
-            console.log("created new post: " + newlyCreated);
-        }
-    });
+// Post.create(
+//     {
+//      title:"What do you know, it works!!",
+//      body: "Lots of good stuff here...  Lorem Ipsum is dead!!",
+//      image: "https://static.pexels.com/photos/261579/pexels-photo-261579.jpeg"
+//     }, function(err, newlyCreated){
+//         if(err){
+//             console.log(err)
+//         } else {
+//             console.log("created new post: " + newlyCreated);
+//         }
+//     });
 // ============================
 //         GET Routes        ==
 // ============================
