@@ -37,10 +37,13 @@ var Post = mongoose.model("posts", postSchema);
 // ============================
 //         GET Routes        ==
 // ============================
+
+//  REDIRECT FROM ROOT TO /POSTS
 app.get("/", function(req, res){
     res.redirect("/posts")
 });
 
+// POSTS INDEX
 app.get("/posts", function(req, res){
     Post.find({}, function(err, posts){
       if(err){
@@ -50,6 +53,12 @@ app.get("/posts", function(req, res){
       }
     });
 
+});
+
+//  NEW POST
+
+app.get("/posts/new", function(req, res){
+   res.render("new")
 });
 
 // ============================

@@ -1,5 +1,9 @@
-body{
-    padding:70px;
+.container.main{
+    margin-top:7em;
+}
+
+.center{
+    text-align: center;
 }
 
 i.icon{

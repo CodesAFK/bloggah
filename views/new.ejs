@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+
+<div class="main ui segment container center">
+    <div class="ui huge header">New Post</div>
+    <form action="/posts" method="POST">
+        <input type="text" name="post[title]" placeholder="Title" required>
+        <input type="text" name="post[image]" placeholder="Image Url" required>
+        <input type="text" name="post[body]" placeholder="Post goes here..." required>
+        <input type="submit">
+
+    </form>
+</div>
+
+<% include ./partials/footer %>
