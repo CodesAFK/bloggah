@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/CodesAFK/bloggah/issues"
   },
-  "homepage": "https://github.com/CodesAFK/bloggah#readme"
+  "homepage": "https://github.com/CodesAFK/bloggah#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.0-rc0"
+  }
 }
