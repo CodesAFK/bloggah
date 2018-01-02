@@ -24,6 +24,16 @@ var Post = mongoose.model("posts", postSchema);
 
 
 // ============================
+//         GET Routes        ==
+// ============================
+app.get("/", function(req, res){
+    res.redirect("/posts")
+});
+app.get("posts", function(req, res){
+    res.render("index");
+});
+
+// ============================
 //     START SERVER          ==
 // ============================
 
