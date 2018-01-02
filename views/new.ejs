@@ -2,11 +2,30 @@
 
 <div class="main ui segment container center">
     <div class="ui huge header">New Post</div>
-    <form action="/posts" method="POST">
-        <input type="text" name="post[title]" placeholder="Title" required>
-        <input type="text" name="post[image]" placeholder="Image Url" required>
-        <input type="text" name="post[body]" placeholder="Post goes here..." required>
-        <input type="submit">
+    <form class="ui form" action="/posts" method="POST">
+        <div class="field">
+            <label for="Title">
+                <input type="text" name="post[title]" placeholder="Title" required>
+            </label>
+        </div>
+
+        <div class="field">
+            <label for="Image">
+                <input type="text" name="post[image]" placeholder="Image Url" required>
+            </label>
+        </div>
+
+        <div class="field">
+            <label for="Post">
+                <textarea name="post[body]" placeholder="Post goes here..." required>
+
+                </textarea>
+            </label>
+            <input type="submit" class="ui green big basic button">
+        </div>
+
+
+
 
     </form>
 </div>
