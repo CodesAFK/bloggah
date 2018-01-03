@@ -2,7 +2,7 @@
 
 <div class="main ui segment container center">
     <div class="ui huge header">Edit <%= post.title %></div>
-    <form class="ui form" action="/posts" method="POST">
+    <form class="ui form" action="/posts/<%= post._id %>?_method=PUT" method="POST">
         <div class="field">
             <label for="Title">
                 <input type="text" name="post[title]" placeholder="Title" value="<%= post.title %>" required>
