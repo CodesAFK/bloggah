@@ -6,7 +6,7 @@ var express            = require('express'),
     app                = express();
 const server = 1337;
 
-mongoose.connect("mongodb://localhost/bloggah");
+mongoose.connect("mongodb://heroku_hfppjzmd:g1e1l86suqbqa2lsj7t38l35qv@ds135777.mlab.com:35777/heroku_hfppjzmd");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
