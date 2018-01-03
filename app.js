@@ -4,7 +4,7 @@ var express            = require('express'),
     expressSanitizer   = require('express-sanitizer'),
     mongoose           = require('mongoose'),
     app                = express();
-const server = 1337;
+const server = process.env.PORT || 3000;
 
 mongoose.connect("mongodb://heroku_hfppjzmd:g1e1l86suqbqa2lsj7t38l35qv@ds135777.mlab.com:35777/heroku_hfppjzmd");
 app.set("view engine", "ejs");
