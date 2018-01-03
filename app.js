@@ -119,6 +119,19 @@ app.put("/posts/:id", function(req, res){
     });
 });
 
+//  DELETE ROUTE
+
+app.delete("/posts/:id", function(req, res){
+    Post.findByIdAndRemove(req.params.id, function(err, deletedPost){
+        if(err){
+            console.log(err);
+            res.redirect("/posts" + req.params.id);
+        } else {
+            res.redirect("index");
+        }
+    });
+});
+
 // ============================
 //     START SERVER          ==
 // ============================
