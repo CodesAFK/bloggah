@@ -1,13 +1,15 @@
-var express    = require('express'),
-    bodyParser = require('body-parser'),
-    mongoose   = require('mongoose'),
-    app        = express();
+var express        = require('express'),
+    bodyParser     = require('body-parser'),
+    methodOverride = require('method-override'),
+    mongoose       = require('mongoose'),
+    app            = express();
 const server = 1337;
 
 mongoose.connect("mongodb://localhost/bloggah");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 // ============================
 //     SCHEMA                ==
@@ -43,7 +45,7 @@ app.get("/", function(req, res){
     res.redirect("/posts")
 });
 
-// POSTS INDEX
+// POSTS INDEX ROUTE
 app.get("/posts", function(req, res){
     Post.find({}, function(err, posts){
       if(err){
@@ -55,13 +57,13 @@ app.get("/posts", function(req, res){
 
 });
 
-//  NEW
+//  NEW ROUTE
 
 app.get("/posts/new", function(req, res){
    res.render("new")
 });
 
-//  SHOW
+//  SHOW ROUTE
 
 app.get("/posts/:id", function(req, res){
     Post.findById(req.params.id, function(err, foundPost){
@@ -74,7 +76,7 @@ app.get("/posts/:id", function(req, res){
     });
 });
 
-//  EDIT
+//  EDIT ROUTE
 
 app.get("/posts/:id/edit", function(req, res){
     Post.findById(req.params.id, function(err, foundPost){
@@ -87,11 +89,12 @@ app.get("/posts/:id/edit", function(req, res){
 
 });
 
+
 // ============================
 //    POST ROUTES            ==
 // ============================
 
-//  CREATE POST
+//  CREATE ROUTE
 
 app.post("/posts", function(req, res){
     Post.create(req.body.post, function(err, newPost){
@@ -100,6 +103,18 @@ app.post("/posts", function(req, res){
             res.render("new");
         } else {
             res.redirect("/posts")
+        }
+    });
+});
+
+// UPDATE ROUTE
+
+app.put("/posts/:id", function(req, res){
+    Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
+        if(err){
+            res.redirect("/posts")
+        } else {
+            res.redirect("/posts/" + req.params.id);
         }
     });
 });
