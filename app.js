@@ -6,7 +6,7 @@ var express            = require('express'),
     app                = express();
 const server = process.env.PORT || 3000;
 
-mongoose.connect("mongodb://heroku_hfppjzmd:g1e1l86suqbqa2lsj7t38l35qv@ds135777.mlab.com:35777/heroku_hfppjzmd");
+mongoose.connect("hidden");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
