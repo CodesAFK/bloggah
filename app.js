@@ -1,15 +1,18 @@
-var express        = require('express'),
-    bodyParser     = require('body-parser'),
-    methodOverride = require('method-override'),
-    mongoose       = require('mongoose'),
-    app            = express();
+var express            = require('express'),
+    bodyParser         = require('body-parser'),
+    methodOverride     = require('method-override'),
+    expressSanitizer   = require('express-sanitizer'),
+    mongoose           = require('mongoose'),
+    app                = express();
 const server = 1337;
 
 mongoose.connect("mongodb://localhost/bloggah");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(expressSanitizer());
 app.use(methodOverride("_method"));
+
 
 // ============================
 //     SCHEMA                ==
@@ -24,18 +27,6 @@ var postSchema = mongoose.Schema({
 
 var Post = mongoose.model("posts", postSchema);
 
-// Post.create(
-//     {
-//      title:"What do you know, it works!!",
-//      body: "Lots of good stuff here...  Lorem Ipsum is dead!!",
-//      image: "https://static.pexels.com/photos/261579/pexels-photo-261579.jpeg"
-//     }, function(err, newlyCreated){
-//         if(err){
-//             console.log(err)
-//         } else {
-//             console.log("created new post: " + newlyCreated);
-//         }
-//     });
 // ============================
 //         GET Routes        ==
 // ============================
@@ -97,6 +88,7 @@ app.get("/posts/:id/edit", function(req, res){
 //  CREATE ROUTE
 
 app.post("/posts", function(req, res){
+    req.body.post.body = req.sanitize(req.body.post.body);
     Post.create(req.body.post, function(err, newPost){
         if(err){
             console.log(err);
@@ -110,6 +102,7 @@ app.post("/posts", function(req, res){
 // UPDATE ROUTE
 
 app.put("/posts/:id", function(req, res){
+    req.body.post.body = req.sanitize(req.body.post.body);
     Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
         if(err){
             res.redirect("/posts")

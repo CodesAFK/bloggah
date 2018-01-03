@@ -17,3 +17,8 @@ i.icon{
 #delete{
     display:inline;
 }
+
+.postContent{
+    padding:3em;
+    text-align: justify;
+}

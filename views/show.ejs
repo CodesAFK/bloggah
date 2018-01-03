@@ -8,8 +8,8 @@
             <div class="content">
                 <%= post.created.toDateString() %>
             </div>
-            <div class="description">
-                <p><%= post.body %></p>
+            <div class="description postContent">
+                <%- post.body %>
             </div>
             <a href="/posts/<%= post._id %>/edit"><button class="ui basic green button">Edit</button></a>
             <form id="delete" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
