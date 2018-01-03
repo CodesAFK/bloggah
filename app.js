@@ -80,6 +80,11 @@ app.get("/posts/:id/edit", function(req, res){
 
 });
 
+//  ABOUT ROUTE
+
+app.get("/about", function(req, res){
+    res.render("about");
+});
 
 // ============================
 //    POST ROUTES            ==

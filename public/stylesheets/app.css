@@ -6,13 +6,19 @@ body{
     padding:3em;
 }
 
-.center{
-    text-align: center;
+p, li{
+    font-size: 1.5em;
+    line-height: 1.2em;
 }
 
 i.icon{
     font-size: 2em;
 }
+
+.center{
+    text-align: center;
+}
+
 
 #delete{
     display:inline;
@@ -21,4 +27,65 @@ i.icon{
 .postContent{
     padding:3em;
     text-align: justify;
+}
+
+.social a{
+    color:grey;
+    z-index: 87;
+}
+
+.facebook:hover{
+    color:#3b5998;
+    -webkit-transition: all 300ms ease-in;
+    -webkit-transform: scale(1.3);
+    -ms-transition: all 300ms ease-in;
+    -ms-transform: scale(1.3);
+    -moz-transition: all 300ms ease-in;
+    -moz-transform: scale(1.3);
+    transition: all 300ms ease-in;
+    transform: scale(1.3);
+}
+
+.github:hover{
+    color:black;
+    -webkit-transition: all 300ms ease-in;
+    -webkit-transform: scale(1.3);
+    -ms-transition: all 300ms ease-in;
+    -ms-transform: scale(1.3);
+    -moz-transition: all 300ms ease-in;
+    -moz-transform: scale(1.3);
+    transition: all 300ms ease-in;
+    transform: scale(1.3);
+
+}
+
+.twitter:hover{
+    color:#00aced;
+    -webkit-transition: all 300ms ease-in;
+    -webkit-transform: scale(1.3);
+    -ms-transition: all 300ms ease-in;
+    -ms-transform: scale(1.3);
+    -moz-transition: all 300ms ease-in;
+    -moz-transform: scale(1.3);
+    transition: all 300ms ease-in;
+    transform: scale(1.3);
+
+}
+
+.linkedin:hover{
+    color:#0077B5;
+    -webkit-transition: all 300ms ease-in;
+    -webkit-transform: scale(1.3);
+    -ms-transition: all 300ms ease-in;
+    -ms-transform: scale(1.3);
+    -moz-transition: all 300ms ease-in;
+    -moz-transform: scale(1.3);
+    transition: all 300ms ease-in;
+    transform: scale(1.3);
+
+}
+
+.thick50{
+    height:50px;
+    width:100vw;
 }
